@@ -13,4 +13,8 @@ def miku(request):
 
 #function to greet someone by taking there name is the url
 def greet (request,name):
- return HttpResponse(f"hello {name.capitalize()}")
+ return render(request,"hello/main.html",
+ #additionalcontext or information
+ {
+"name":name.capitalize()
+ })
